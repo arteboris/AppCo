@@ -1,0 +1,16 @@
+.clicks_container {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.clicks_container h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  padding-bottom: 20px;
+}
+
+.canvas_container {
+  height: 280px;
+}

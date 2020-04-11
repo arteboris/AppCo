@@ -1,0 +1,58 @@
+.container_paginate {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.paginate_list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 24px 0 24px 0px;
+}
+
+.paginate_btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-right: 8px;
+  color: rgb(209, 209, 209);
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.paginate_btn:hover {
+  background-color: #3a80ba;
+}
+
+.paginate_btn[disabled] {
+  pointer-events: none;
+  background-color: #3a80ba;
+}
+
+.paginate_next__prev {
+  width: 48px;
+  height: 48px;
+  line-height: 50px;
+  font-size: 50px;
+  background-color: #ffffff;
+  border: none;
+  color: #3a80ba;
+  margin-left: 16px;
+  margin-right: 24px;
+}
+
+.paginate_next__prev[disabled] {
+  pointer-events: none;
+  color: #f1f1f1;
+}
+
+.paginate_span {
+  color: rgb(209, 209, 209);
+  margin-left: 2px;
+  margin-right: 10px;
+  font-size: 46px;
+}

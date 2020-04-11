@@ -1,0 +1,35 @@
+.container_header {
+  background-color: #3a80ba;
+}
+
+.container_header__title {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container_header h1 {
+  font-size: 40px;
+  line-height: 49px;
+  color: #ffffff;
+  padding: 10px 0 14px 0px;
+  display: inline-block;
+  animation: logo-appear 2s linear;
+}
+
+@keyframes logo-appear {
+  0% {
+    transform: rotateY(-200px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotateY(0);
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

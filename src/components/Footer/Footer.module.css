@@ -1,0 +1,22 @@
+.container_footer {
+  background-color: #1c3b55;
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 142%;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer_list__logo {
+  font-size: 24px;
+}

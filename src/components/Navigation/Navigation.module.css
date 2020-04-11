@@ -1,0 +1,27 @@
+.nav_menu {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+  padding: 16px 0 24px 0px;
+}
+
+.nav_menu li {
+  margin-right: 8px;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: #cccccc;
+}
+
+.activeStyle {
+  color: #3a80ba;
+  cursor: default;
+}
+
+.nav_link__user {
+  color: #3a80ba;
+  cursor: default;
+}

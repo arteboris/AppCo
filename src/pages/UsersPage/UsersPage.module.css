@@ -1,0 +1,9 @@
+.container_usersPage h1 {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 16px 0px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+}
