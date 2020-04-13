@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/appco/static/css/main.bd4e0979.chunk.css",
+    "main.js": "/appco/static/js/main.1a4cfd8e.chunk.js",
+    "main.js.map": "/appco/static/js/main.1a4cfd8e.chunk.js.map",
+    "runtime-main.js": "/appco/static/js/runtime-main.20b499a6.js",
+    "runtime-main.js.map": "/appco/static/js/runtime-main.20b499a6.js.map",
+    "static/js/2.c3be2662.chunk.js": "/appco/static/js/2.c3be2662.chunk.js",
+    "static/js/2.c3be2662.chunk.js.map": "/appco/static/js/2.c3be2662.chunk.js.map",
+    "index.html": "/appco/index.html",
+    "precache-manifest.59254b932969a47704012171d7ccdea4.js": "/appco/precache-manifest.59254b932969a47704012171d7ccdea4.js",
+    "service-worker.js": "/appco/service-worker.js",
+    "static/css/main.bd4e0979.chunk.css.map": "/appco/static/css/main.bd4e0979.chunk.css.map",
+    "static/js/2.c3be2662.chunk.js.LICENSE.txt": "/appco/static/js/2.c3be2662.chunk.js.LICENSE.txt",
+    "static/media/HomePage.module.css": "/appco/static/media/footer.6b858513.png",
+    "static/media/clean.png": "/appco/static/media/clean.8434b9ad.png",
+    "static/media/macbook.png": "/appco/static/media/macbook.f4f9e576.png",
+    "static/media/mobile.png": "/appco/static/media/mobile.a65ae365.png",
+    "static/media/index.css": "/appco/static/media/montserrat-v14-latin-regular.bc3aa95d.woff2",
+    "static/media/secure.png": "/appco/static/media/secure.9438b199.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20b499a6.js",
+    "static/js/2.c3be2662.chunk.js",
+    "static/css/main.bd4e0979.chunk.css",
+    "static/js/main.1a4cfd8e.chunk.js"
+  ]
+}
