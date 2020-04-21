@@ -43,3 +43,7 @@
 .table tbody tr {
   cursor: pointer;
 }
+
+.table tbody tr:hover {
+  background-color: rgb(247, 190, 86);
+}

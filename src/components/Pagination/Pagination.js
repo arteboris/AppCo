@@ -1,22 +1,17 @@
-/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
 import showPagination from './helpers';
 import css from './Pagination.module.css';
 
-const Pagination = ({ page, totalPages }) => {
+const Pagination = ({ page, totalPages, changePage }) => {
   const total = showPagination(page);
-
-  const handleChangePage = number => {
-    console.log(number);
-  };
 
   return (
     <div className={css.container_paginate}>
       <ul className={css.paginate_list}>
         <li>
           <button
-            // onClick={handlePrevPage}
+            onClick={() => changePage(page - 1)}
             disabled={page === 1}
             className={css.paginate_next__prev}
             type="button"
@@ -27,7 +22,7 @@ const Pagination = ({ page, totalPages }) => {
             <button
               className={css.paginate_btn}
               type="button"
-              onClick={() => handleChangePage(number)}
+              onClick={() => changePage(number)}
               disabled={page === number}
             >
               {number}
@@ -43,7 +38,7 @@ const Pagination = ({ page, totalPages }) => {
               <button
                 className={css.paginate_btn}
                 type="button"
-                // onClick={() => handleChangePage(totalPages)}
+                onClick={() => changePage(totalPages)}
                 disabled={page === totalPages}
               >
                 {totalPages}
@@ -54,7 +49,7 @@ const Pagination = ({ page, totalPages }) => {
         <li>
           <button
             disabled={page === totalPages}
-            // onClick={handleNextPage}
+            onClick={() => changePage(page + 1)}
             className={css.paginate_next__prev}
             type="button"
           >{`>`}</button>
@@ -66,7 +61,7 @@ const Pagination = ({ page, totalPages }) => {
 
 Pagination.propTypes = {
   totalPages: PropTypes.number.isRequired,
-  // handleChangePage: PropTypes.func.isRequired,
+  changePage: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
   // handleNextPage: PropTypes.func.isRequired,
   // handlePrevPage: PropTypes.func.isRequired,
