@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
 import showPagination from './helpers';
@@ -7,7 +8,7 @@ const Pagination = ({ page, totalPages }) => {
   const total = showPagination(page);
 
   const handleChangePage = number => {
-    // console.log(number);
+    console.log(number);
   };
 
   return (
@@ -26,7 +27,7 @@ const Pagination = ({ page, totalPages }) => {
             <button
               className={css.paginate_btn}
               type="button"
-              onClick={() => handleChangePage(page + 1)}
+              onClick={() => handleChangePage(number)}
               disabled={page === number}
             >
               {number}
