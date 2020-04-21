@@ -11,7 +11,7 @@
 }
 
 .table th {
-  padding: 16px;
+  padding: 16px 10px 16px 10px;
   line-height: 20px;
   color: #ffffff;
   background-color: #3a80ba;
@@ -45,5 +45,27 @@
 }
 
 .table tbody tr:hover {
-  background-color: rgb(247, 190, 86);
+  color: orange;
+}
+
+.containerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerTitle_btn {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.containerTitle_btn button {
+  color: #ffffff;
+  border: none;
+  background-color: #3a80ba;
+}
+
+.containerTitle_btn button:hover {
+  color: orange;
 }

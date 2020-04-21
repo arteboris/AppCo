@@ -25,6 +25,10 @@ class Users extends Component {
     history.push(`/users/${userId}`);
   };
 
+  handleChange = query => {
+    console.log(query);
+  };
+
   render() {
     const { users } = this.props;
     return (
@@ -34,12 +38,66 @@ class Users extends Component {
             <tr>
               <th>Id</th>
               <th>First name</th>
-              <th>Last name</th>
+              <th>
+                <div className={css.containerTitle}>
+                  <div>Last name</div>
+                  <div className={css.containerTitle_btn}>
+                    <button
+                      type="submit"
+                      onClick={() => this.handleChange('last_name=ascending')}
+                    >
+                      ▲
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => this.handleChange('last_name=descending')}
+                    >
+                      ▼
+                    </button>
+                  </div>
+                </div>
+              </th>
               <th>Email</th>
               <th>Gender</th>
               <th>Ip adress</th>
-              <th>Total clicks</th>
-              <th>Total page views</th>
+              <th>
+                <div className={css.containerTitle}>
+                  <div>Total clicks</div>
+                  <div className={css.containerTitle_btn}>
+                    <button
+                      type="button"
+                      onClick={() => this.handleChange('clicks=ascending')}
+                    >
+                      ▲
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => this.handleChange('clicks=descending')}
+                    >
+                      ▼
+                    </button>
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div className={css.containerTitle}>
+                  <div>Total page views</div>
+                  <div className={css.containerTitle_btn}>
+                    <button
+                      type="button"
+                      onClick={() => this.handleChange('page_views=ascending')}
+                    >
+                      ▲
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => this.handleChange('page_views=descending')}
+                    >
+                      ▼
+                    </button>
+                  </div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>

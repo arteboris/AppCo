@@ -11,10 +11,10 @@ defaults.global.defaultFontWeight = 400;
 
 const Clicks = ({ date, clicks }) => {
   const data = {
-    labels: [0, '2019-10-01', '2019-10-02', ...date],
+    labels: [0, ...date],
     datasets: [
       {
-        data: [0, 0, 0, ...clicks],
+        data: [0, ...clicks],
         fill: false,
         borderColor: '#3A80BA',
         lineTension: 0.3,
