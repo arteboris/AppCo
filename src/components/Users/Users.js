@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import statistic from '../../db/users.statistic.json';
 import css from './Users.module.css';
 
 class Users extends Component {
   state = {};
 
   static propTypes = {
+    page: PropTypes.number.isRequired,
+    limit: PropTypes.number.isRequired,
+    getUsersPaginate: PropTypes.func.isRequired,
     users: PropTypes.arrayOf(PropTypes.object).isRequired,
     history: PropTypes.shape({
       push: PropTypes.func,
     }).isRequired,
   };
 
-  getTotalClicks = userId => {
-    return statistic
-      .filter(elem => elem.user_id === userId)
-      .reduce((acc, el) => {
-        return acc + el.clicks;
-      }, 0);
-  };
-
-  getTotalPageViews = userId => {
-    return statistic
-      .filter(elem => elem.user_id === userId)
-      .reduce((acc, el) => {
-        return acc + el.page_views;
-      }, 0);
-  };
+  componentDidMount() {
+    const { page, limit, getUsersPaginate } = this.props;
+    getUsersPaginate(page, limit);
+  }
 
   goToUserPage = userId => {
     const { history } = this.props;
@@ -60,8 +51,8 @@ class Users extends Component {
                 <td>{user.email}</td>
                 <td>{user.gender}</td>
                 <td>{user.ip_address}</td>
-                <td>{this.getTotalClicks(user.id)}</td>
-                <td>{this.getTotalPageViews(user.id)}</td>
+                <td>{user.clicks}</td>
+                <td>{user.page_views}</td>
               </tr>
             ))}
           </tbody>
