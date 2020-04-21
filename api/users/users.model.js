@@ -55,13 +55,18 @@ class UsersModel {
 
     try{
 
-      await fs.readFile(filePathUsersStatistic, 'utf8', (err, content) => {
-        if (err) throw err;
-        const statistic = JSON.parse(content);
+      fs.readFile(filePathUsers, 'utf8', (err, data) => {
+        if (err)
+          throw err;
+        const users = JSON.parse(data);
+        fs.readFile(filePathUsersStatistic, 'utf8', (err, content) => {
+          if (err)
+            throw err;
+          const statistic = JSON.parse(content);
 
-        UsersController.sendUserId(id, statistic, dateFrom, dateTo, res);
+        UsersController.sendUserId(users, id, statistic, dateFrom, dateTo, res);
       });
-
+    });
     } catch(err) {
       throw err;
     }

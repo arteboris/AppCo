@@ -31,13 +31,13 @@ class UsersController {
           .sort((a, b) => a.last_name > b.last_name ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, last_name: last_name, totalPages: total, data: data});
         } else if(last_name === "descending") {
           const data = totalUsersWithStatistic
           .sort((a, b) => b.last_name > a.last_name ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, last_name: last_name, totalPages: total, data: data});
         }
 
       } else if (clicks) {
@@ -46,14 +46,14 @@ class UsersController {
           .sort((a, b) => a.clicks > b.clicks ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, clicks: clicks, totalPages: total, data: data});
 
         } else if(clicks === "descending") {
           const data = totalUsersWithStatistic
           .sort((a, b) => b.clicks > a.clicks ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, clicks: clicks, totalPages: total, data: data});
 
         }
       } else if (page_views) {
@@ -62,18 +62,18 @@ class UsersController {
           .sort((a, b) => a.page_views > b.page_views ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, page_views: page_views, totalPages: total, data: data});
 
         } else if(page_views === "descending") {
           const data = totalUsersWithStatistic
           .sort((a, b) => b.page_views > a.page_views ? 1:-1)
           .slice(indexOfFirstUsers, indexOfLastUsers)
 
-          return res.status(200).json({status: 'success', total: total, data: data});
+          return res.status(200).json({status: 'success', page: page, limit: limit, page_views: page_views, totalPages: total, data: data});
         }
       } else {
         const data = totalUsersWithStatistic.slice(indexOfFirstUsers, indexOfLastUsers)
-        return res.status(200).json({status: 'success', total: total, data: data});
+        return res.status(200).json({status: 'success', page: page, limit: limit, totalPages: total, data: data});
       }
     } else {
       return res.status(200).json({status: 'success', data: totalUsersWithStatistic});
@@ -84,10 +84,12 @@ class UsersController {
     return this._sendUserId.bind(this);
   }
 
-  async _sendUserId(id, statistic, dateFrom, dateTo, res) {
+  async _sendUserId(users, id, statistic, dateFrom, dateTo, res) {
+    const user = users.find(elem => elem.id === id);
+    const fullName = `${user.first_name} ${user.last_name}`;
     const data = statistic.filter(elem => elem.user_id === id);
 
-    if(data.length === 0) return res.status(200).json({status: 'success', data: 'no data found'})
+    if(data.length === 0) return res.status(200).json({status: 'success', fullName: fullName, data: 'no data found'})
 
     else if(dateFrom && dateTo) {
       const day = 24 * 60 * 60 * 1000;
@@ -104,9 +106,9 @@ class UsersController {
         clicks: 0,
         page_views: 0,
       })
-      return res.status(200).json({status: 'success', data: dataForPeriod});
+      return res.status(200).json({status: 'success', fullName: fullName, data: dataForPeriod});
     }
-    return res.status(200).json({status: 'success', data: data});
+    return res.status(200).json({status: 'success', fullName: fullName, data: data});
   }
 };
 

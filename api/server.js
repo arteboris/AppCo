@@ -25,9 +25,7 @@ async function init() {
   initMiddleware(app);
   initRouters(app);
 
-  app.listen(config.port, () => {
-    console.log('Server listening on port', config.port);
-  });
+  app.listen(config.port);
 }
 
 init();

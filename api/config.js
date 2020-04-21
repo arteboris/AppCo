@@ -5,8 +5,6 @@ const filePath = path.join(__dirname, './', 'db/', 'users.db');
 
 const db = new sqlite3.Database(filePath, sqlite3.OPEN_READWRITE, err => {
   if (err) throw err;
-
-  console.log('Connected to User DB');
 });
 
 // /*** SCHEMA users ***///
@@ -27,6 +25,6 @@ const db = new sqlite3.Database(filePath, sqlite3.OPEN_READWRITE, err => {
 // });
 
 module.exports = {
-  port: 3030,
+  port: process.env.Port || 3030,
   db,
 };
