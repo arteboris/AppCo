@@ -12,7 +12,7 @@ class UsersValidator {
     const period = req.query.period;
     const url = req.url;
 
-    if(!url.includes('?') && id) {
+    if(!url.includes('?') && id > 0 && id <= 1000) {
       return next();
     }
 
