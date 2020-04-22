@@ -1,15 +1,45 @@
+import { combineReducers } from 'redux';
 import { Type } from './usersActions';
-import * as pageActions from '../page/pageActions';
 
-const usersReducer = (state = [], { type, payload }) => {
+const page = (state = 1, { type, payload }) => {
+  switch (type) {
+    case Type.CHANGE_PAGE_SUCCESS:
+      return payload.page;
+    default:
+      return state;
+  }
+};
+
+const limit = (state = 50, { type }) => {
+  switch (type) {
+    default:
+      return state;
+  }
+};
+
+const totalPages = (state = 0, { type, payload }) => {
+  switch (type) {
+    case Type.FETCH_USERS_SUCCESS:
+      return payload.totalPages;
+    default:
+      return state;
+  }
+};
+
+const data = (state = [], { type, payload }) => {
   switch (type) {
     case Type.FETCH_USERS_SUCCESS:
       return payload.data;
-    case pageActions.Type.CHANGE_PAGE_SUCCESS:
+    case Type.CHANGE_PAGE_SUCCESS:
       return payload.data;
     default:
       return state;
   }
 };
 
-export default usersReducer;
+export default combineReducers({
+  page,
+  limit,
+  totalPages,
+  data,
+});

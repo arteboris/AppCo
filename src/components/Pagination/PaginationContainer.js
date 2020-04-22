@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Pagination from './Pagination';
-import page from '../../redux/page/pageSelectors';
-import totalPages from '../../redux/totalPages/totalPagesSelectors';
-import { changePage } from '../../redux/page/pageOperations';
+import { page, totalPages } from '../../redux/users/usersSelectors';
+import { changePage } from '../../redux/users/usersOperations';
 
 const mapStateToProps = state => ({
   page: page(state),
