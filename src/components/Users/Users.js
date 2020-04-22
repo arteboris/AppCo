@@ -13,6 +13,7 @@ class Users extends Component {
     history: PropTypes.shape({
       push: PropTypes.func,
     }).isRequired,
+    sortUsers: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -25,12 +26,8 @@ class Users extends Component {
     history.push(`/users/${userId}`);
   };
 
-  handleChange = query => {
-    console.log(query);
-  };
-
   render() {
-    const { users } = this.props;
+    const { users, sortUsers } = this.props;
     return (
       <div className={css.container_table}>
         <table className={css.table}>
@@ -44,13 +41,13 @@ class Users extends Component {
                   <div className={css.containerTitle_btn}>
                     <button
                       type="submit"
-                      onClick={() => this.handleChange('last_name=ascending')}
+                      onClick={() => sortUsers('last_name=ascending')}
                     >
                       ▲
                     </button>
                     <button
                       type="button"
-                      onClick={() => this.handleChange('last_name=descending')}
+                      onClick={() => sortUsers('last_name=descending')}
                     >
                       ▼
                     </button>
@@ -66,13 +63,13 @@ class Users extends Component {
                   <div className={css.containerTitle_btn}>
                     <button
                       type="button"
-                      onClick={() => this.handleChange('clicks=ascending')}
+                      onClick={() => sortUsers('clicks=ascending')}
                     >
                       ▲
                     </button>
                     <button
                       type="button"
-                      onClick={() => this.handleChange('clicks=descending')}
+                      onClick={() => sortUsers('clicks=descending')}
                     >
                       ▼
                     </button>
@@ -85,13 +82,13 @@ class Users extends Component {
                   <div className={css.containerTitle_btn}>
                     <button
                       type="button"
-                      onClick={() => this.handleChange('page_views=ascending')}
+                      onClick={() => sortUsers('page_views=ascending')}
                     >
                       ▲
                     </button>
                     <button
                       type="button"
-                      onClick={() => this.handleChange('page_views=descending')}
+                      onClick={() => sortUsers('page_views=descending')}
                     >
                       ▼
                     </button>

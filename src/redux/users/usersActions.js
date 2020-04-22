@@ -5,6 +5,9 @@ export const Type = {
   CHANGE_PAGE_START: 'CHANGE_PAGE_START',
   CHANGE_PAGE_SUCCESS: 'CHANGE_PAGE_SUCCESS',
   CHANGE_PAGE_ERROR: 'CHANGE_PAGE_ERROR',
+  SORT_USERS_START: 'SORT_USERS_START',
+  SORT_USERS_SUCCESS: 'SORT_USERS_SUCCESS',
+  SORT_USERS_ERROR: 'SORT_USERS_ERROR',
 };
 
 export const fetchUsersStart = () => ({
@@ -32,5 +35,19 @@ export const changePageSuccess = data => ({
 
 export const changePageError = error => ({
   type: 'CHANGE_PAGE_ERROR',
+  payload: error,
+});
+
+export const sortUsersStart = () => ({
+  type: 'SORT_USERS_START',
+});
+
+export const sortUsersSuccess = data => ({
+  type: 'SORT_USERS_SUCCESS',
+  payload: data,
+});
+
+export const sortUsersError = error => ({
+  type: 'SORT_USERS_ERROR',
   payload: error,
 });

@@ -5,8 +5,14 @@ import {
   changePageStart,
   changePageSuccess,
   changePageError,
+  sortUsersStart,
+  sortUsersSuccess,
+  sortUsersError,
 } from './usersActions';
-import { getUsersPaginateFromServer } from '../../services/api';
+import {
+  getUsersPaginateFromServer,
+  getUsersSortFromServer,
+} from '../../services/api';
 
 export const getUsersPaginate = (page, limit) => dispatch => {
   dispatch(fetchUsersStart());
@@ -20,7 +26,7 @@ export const getUsersPaginate = (page, limit) => dispatch => {
 };
 
 export const changePage = page => (dispatch, getState) => {
-  const { limit } = getState();
+  const { limit } = getState().users;
   dispatch(changePageStart());
   getUsersPaginateFromServer(page, limit)
     .then(response => {
@@ -28,5 +34,18 @@ export const changePage = page => (dispatch, getState) => {
     })
     .catch(error => {
       dispatch(changePageError(error));
+    });
+};
+
+export const sortUsers = query => (dispatch, getState) => {
+  const { limit } = getState().users;
+  const page = 1;
+  dispatch(sortUsersStart());
+  getUsersSortFromServer(page, limit, query)
+    .then(response => {
+      dispatch(sortUsersSuccess(response.data));
+    })
+    .catch(error => {
+      dispatch(sortUsersError(error));
     });
 };
