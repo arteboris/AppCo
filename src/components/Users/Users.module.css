@@ -69,3 +69,8 @@
 .containerTitle_btn button:hover {
   color: orange;
 }
+
+.sort_btn[disabled] {
+  pointer-events: none;
+  color: #3a80ba;
+}

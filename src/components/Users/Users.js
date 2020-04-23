@@ -14,6 +14,7 @@ class Users extends Component {
       push: PropTypes.func,
     }).isRequired,
     sortUsers: PropTypes.func.isRequired,
+    sort: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class Users extends Component {
   };
 
   render() {
-    const { users, sortUsers } = this.props;
+    const { users, sortUsers, sort } = this.props;
     return (
       <div className={css.container_table}>
         <table className={css.table}>
@@ -40,12 +41,16 @@ class Users extends Component {
                   <div>Last name</div>
                   <div className={css.containerTitle_btn}>
                     <button
+                      disabled={sort === 'last_name=ascending'}
+                      className={css.sort_btn}
                       type="submit"
                       onClick={() => sortUsers('last_name=ascending')}
                     >
                       ▲
                     </button>
                     <button
+                      disabled={sort === 'last_name=descending'}
+                      className={css.sort_btn}
                       type="button"
                       onClick={() => sortUsers('last_name=descending')}
                     >
@@ -62,12 +67,16 @@ class Users extends Component {
                   <div>Total clicks</div>
                   <div className={css.containerTitle_btn}>
                     <button
+                      className={css.sort_btn}
+                      disabled={sort === 'clicks=ascending'}
                       type="button"
                       onClick={() => sortUsers('clicks=ascending')}
                     >
                       ▲
                     </button>
                     <button
+                      className={css.sort_btn}
+                      disabled={sort === 'clicks=descending'}
                       type="button"
                       onClick={() => sortUsers('clicks=descending')}
                     >
@@ -81,12 +90,16 @@ class Users extends Component {
                   <div>Total page views</div>
                   <div className={css.containerTitle_btn}>
                     <button
+                      className={css.sort_btn}
+                      disabled={sort === 'page_views=ascending'}
                       type="button"
                       onClick={() => sortUsers('page_views=ascending')}
                     >
                       ▲
                     </button>
                     <button
+                      className={css.sort_btn}
+                      disabled={sort === 'page_views=descending'}
                       type="button"
                       onClick={() => sortUsers('page_views=descending')}
                     >

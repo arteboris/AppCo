@@ -4,7 +4,7 @@ import showPagination from './helpers';
 import css from './Pagination.module.css';
 
 const Pagination = ({ page, totalPages, changePage }) => {
-  const total = showPagination(page);
+  const total = showPagination(page, totalPages);
 
   return (
     <div className={css.container_paginate}>
@@ -29,7 +29,7 @@ const Pagination = ({ page, totalPages, changePage }) => {
             </button>
           </li>
         ))}
-        {page < 15 && (
+        {page < totalPages - 5 && (
           <>
             <li>
               <span className={css.paginate_span}>...</span>

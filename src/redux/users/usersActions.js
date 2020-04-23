@@ -8,6 +8,9 @@ export const Type = {
   SORT_USERS_START: 'SORT_USERS_START',
   SORT_USERS_SUCCESS: 'SORT_USERS_SUCCESS',
   SORT_USERS_ERROR: 'SORT_USERS_ERROR',
+  CHANGE_LIMIT_START: 'CHANGE_LIMIT_START',
+  CHANGE_LIMIT_SUCCESS: 'CHANGE_LIMIT_SUCCESS',
+  CHANGE_LIMIT_ERROR: 'CHANGE_LIMIT_ERROR',
 };
 
 export const fetchUsersStart = () => ({
@@ -49,5 +52,19 @@ export const sortUsersSuccess = data => ({
 
 export const sortUsersError = error => ({
   type: 'SORT_USERS_ERROR',
+  payload: error,
+});
+
+export const changeLimitStart = () => ({
+  type: 'CHANGE_LIMIT_START',
+});
+
+export const changeLimitSuccess = data => ({
+  type: 'CHANGE_LIMIT_SUCCESS',
+  payload: data,
+});
+
+export const changeLimitError = error => ({
+  type: 'CHANGE_LIMIT_ERROR',
   payload: error,
 });

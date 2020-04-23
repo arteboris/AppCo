@@ -9,4 +9,50 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
+  padding-right: 500px;
+}
+
+.title_datePicker {
+  display: flex;
+  align-items: center;
+}
+
+.datePicker_button {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_dataPicker {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.dataPicker {
+  width: 100px;
+  outline: none;
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 2px;
+}
+
+.button_choosePeriod {
+  margin: 0 auto;
+  height: 30px;
+  width: 140px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3a80ba;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  text-align: center;
+}
+
+.button_choosePeriod:hover {
+  background-color: orange;
 }
