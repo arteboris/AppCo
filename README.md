@@ -1,6 +1,6 @@
 # AppCo server API
 
-view what routes pass
+view what routes pass:
 
 1. https://appco-statistic.herokuapp.com/ home-page(приветствие);
 
